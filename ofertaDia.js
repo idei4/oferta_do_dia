@@ -1,32 +1,28 @@
 //$("<div>", {class	:"oferta_dia"}).appendTo("#pt_custommenu");
 
 var div = $("<div>").addClass("oferta_dia");
-var titulo = $("<p>").addClass("titulo_oferta_dia").text("Oferta do Dia");
+var tituloBox = $("<p>").addClass("titulo_oferta_dia").text("Oferta do Dia");
 var link = $("<a>").attr("href", "#");
-var oferta = $("<div>").addClass("oferta");
+var ofertaBox = $("<div>").addClass("oferta");
 
-$(div).append(titulo).append(link).append(oferta).appendTo("#pt_custommenu");
+$(div).append(tituloBox).append(link).append(ofertaBox).appendTo("#pt_custommenu");
 
-/*var clientes = $(".oferta_dia");
-	var url = "http://viaverde.com.br/oferta.json";
-
-
-	$.getJSON(url, function(retorno){
-		var ul = $("<ul>");
+var ofertas = $(".oferta_dia");
+var url = "http://viaverdeonline.com.br/oferta.json";
 
 
-		$.each(retorno.clientes, function(){
+$.getJSON(url, function(resultado){
 
-			var li = $("<li>");
-			var cNome = $("<h3>").text(this.nome);
-			var cLogo = $("<img>").attr("src", this.logo);
-			var cServicos = $("<span class='servicos'>Serviços: ").text(this.servicos);
-			var cDescricao = $("<span>").text(this.descricao);
 
-			li.append(cNome).append(cLogo).append(cServicos).append(cDescricao).appendTo(ul);
-		});
+	$.each(resultado.ofertaDia, function(){
+		var otitulo = $("<p class='titulo'>").text(this.titulo);
+		var oImagem = $("<img>").attr("src", this.imagem);
+		/*var cServicos = $("<span class='servicos'>Serviços: ").text(this.servicos);
+		var cDescricao = $("<span>").text(this.descricao);*/
 
-		$("ul", clientes).remove();
-		ul.appendTo(clientes);
+		$(otitulo.append(oImagem)./*append(cServicos).append(cDescricao).*/appendTo(ofertaBox));
 	});
-*/
+
+	//$("div", ofertas).remove();
+	//divOferta.appendTo(ofertas);
+});
