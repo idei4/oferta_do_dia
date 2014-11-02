@@ -1,7 +1,7 @@
 //$("<div>", {class	:"oferta_dia"}).appendTo("#pt_custommenu");
 
 var div = $("<div>").addClass("oferta_dia");
-var titulo = $("<p>").addClass("titulo_oferta_dia");
+var titulo = $("<p>").addClass("titulo_oferta_dia").text("Oferta do Dia");
 var link = $("<a>").attr("href", "#");
 var oferta = $("<div>").addClass("oferta");
 
