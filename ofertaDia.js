@@ -17,10 +17,12 @@ $.getJSON(url, function(resultado){
 	$.each(resultado.ofertaDia, function(){
 		var otitulo = $("<p class='titulo'>").text(this.titulo);
 		var oImagem = $("<img>").attr("src", this.imagem);
-		/*var cServicos = $("<span class='servicos'>Serviços: ").text(this.servicos);
-		var cDescricao = $("<span>").text(this.descricao);*/
+		var oLink = $("<a>").attr("href", this.link).addClass("link-oferta").text("Adicionar ao carrinho");
+		/*var cDescricao = $("<span>").text(this.descricao);*/
 
-		$(otitulo.append(oImagem)./*append(cServicos).append(cDescricao).*/appendTo(ofertaBox));
+		$(otitulo.appendTo(ofertaBox));
+		$(oImagem.appendTo(ofertaBox));
+		$(oLink.appendTo(ofertaBox));
 	});
 
 	//$("div", ofertas).remove();
